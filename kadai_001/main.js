@@ -61,6 +61,10 @@ const keyPress = e => {
   // 正タイプの場合
    // スコアのインクリメント
    score++;
+   plus++;
+   //現在のタイプ数を表示
+   plusfield.textContent = plus;
+
   wrap.classList.remove('mistyped');
   typed += untyped.substring(0, 1);
   untyped = untyped.substring(1);
@@ -142,9 +146,3 @@ start.addEventListener('click', () => {
 });
 
 untypedfield.textContent = 'スタートボタンで開始';
-// 文字数をカウントする
-window.addEventListener('keypress', e => {
-  console.log(e.key);
-  plus++;
-  plusfield.textContent = plus;
-});
